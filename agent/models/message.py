@@ -18,7 +18,7 @@ class Message(BaseModel):
     tool_calls: list[dict[str, Any]] | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        result = {"role": str(self.role.value)}
+        result: dict[str, Any] = {"role": str(self.role.value)}
         if self.content:
             result["content"] = self.content
         if self.name:
